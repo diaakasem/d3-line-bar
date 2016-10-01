@@ -1,0 +1,29 @@
+
+.svg-container {
+    border: 1px solid grey;
+}
+.svg-container2 {
+    border: 1px solid blue;
+}
+.svg-container3 {
+    border: 1px solid green;
+}
+
+.bar--positive {
+    fill: steelblue;
+}
+
+.bar--negative {
+    fill: darkorange;
+}
+
+.axis text {
+    font: 10px sans-serif;
+}
+
+.line {
+    fill: none;
+    /*stroke: steelblue;*/
+    stroke: #282828;
+    stroke-width: 1.5px;
+}
