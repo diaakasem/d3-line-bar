@@ -6,32 +6,29 @@ function createLineBarGraph(container, barData, lineData) {
     function getWidthHeight(element) {
         var node = element.node();
         return {
-            width: node.offsetWidth,
-            height: node.offsetHeight
+            width: node.offsetWidth - 2 , // For border with 1 px width
+            height: node.offsetHeight - 2 // Fox border with 1 px width
         };
     }
 
+    var margin = {
+        top: 5, right: 5, bottom: 5, left: 5
+    };
     var whObj = getWidthHeight(d3.select(container));
-    var width = whObj.width,
-        height = whObj.height;
-
-    var lineX = d3.scale.ordinal()
-        .rangeRoundBands([0, width], 0.1);
-
-    var lineY = d3.scale.linear()
-        .range([height, 0]);
+    var width = whObj.width - margin.left - margin.right,
+        height = whObj.height - margin.top - margin.bottom;
 
     var barX = d3.scale.ordinal()
-        .rangeRoundBands([0, width], 0.1);
+        .rangeRoundBands([margin.left, width], 0.1);
 
     var barY = d3.scale.linear()
-        .range([height, 0]);
+        .range([height, margin.top]);
 
     var svg = d3.select(container).append('svg')
         .attr('width', width)
         .attr('height', height)
-        .append('g');
-        //.attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+        .append('g')
+        .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
 
 
     // ------------
@@ -61,6 +58,12 @@ function createLineBarGraph(container, barData, lineData) {
     // Line Creation
     // ------------
 
+    var lineX = d3.scale.ordinal()
+        .rangeRoundBands([margin.left, width], 0.1);
+
+    var lineY = d3.scale.linear()
+        .range([height-margin.top, margin.top]);
+
     var line = d3.svg.line()
         .x(function(d, i) { return lineX(i); })
         .y(function(d) { return lineY(d); });
@@ -70,8 +73,9 @@ function createLineBarGraph(container, barData, lineData) {
     //lineXDomain.push(values.length);
 
     lineX.domain(lineXDomain);
-    var max = Math.max(Math.abs(d3.min(values)), Math.abs(d3.max(values)));
-    lineY.domain(d3.extent([-1*max, max]));
+    //var max = Math.max(Math.abs(d3.min(values)), Math.abs(d3.max(values)));
+    //lineY.domain(d3.extent([-1*max, max]));
+    lineY.domain(d3.extent(values));
 
     var linePath = svg.append('path')
         .datum(values)
