@@ -2,6 +2,13 @@
 'use strict';
 
 function createLineBarGraph(container, barData, lineData) {
+    if (!barData) {
+        barData = $(container).data('bar');
+    }
+    if (!lineData) {
+        lineData = $(container).data('line');
+    }
+    $(container).empty();
 
     function getWidthHeight(element) {
         var node = element.node();
