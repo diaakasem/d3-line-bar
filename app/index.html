@@ -1,60 +1,93 @@
 <!doctype html>
 <html lang="">
-  <head>
-    <meta charset="utf-8">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Line Bar Chart</title>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Line Bar Chart</title>
 
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <!-- Place favicon.ico in the root directory -->
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
 
-    <!-- build:css styles/vendor.css -->
-    <!-- bower:css -->
-    <!-- endbower -->
-    <!-- endbuild -->
+        <!-- build:css styles/vendor.css -->
+        <!-- bower:css -->
+        <!-- endbower -->
+        <!-- endbuild -->
 
-    <!-- build:css styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
+        <!-- build:css styles/main.css -->
+        <link rel="stylesheet" href="styles/main.css">
+        <!-- endbuild -->
 
-  </head>
-  <body style="width: 100vw; height: 100vh">
-    <!--[if lt IE 10]>
-      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-    <div class="data-container"
-      <form>
-        <p> Line Data </p>
-        <textarea id="line-data" name="line-data" col="100" row="10"> line data </textarea>
-        <p> Bar Data </p>
-        <textarea id="bar-data" name="bar-data" col="100" row="10"> bar data </textarea>
-        <button id="executer"> Save </button>
-      </form>
-    </div>
-    <div class="svg-container"
-        style="width:800px;height:300px; display:inline-block;"
-        data-line=""
-        data-bar=""> </div>
-    <div class="svg-container2"
-        style="width:300px;height:300px; display:inline-block;"
-        data-line=""
-        data-bar=""> </div>
-    <div class="svg-container3"
-        style="width:500px;height:500px; display:inline-block;"
-        data-line=""
-        data-bar=""> </div>
-    <!-- build:js scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="/bower_components/jquery/dist/jquery.js"></script>
-    <script src="/bower_components/d3/d3.js"></script>
-    <script src="/bower_components/jquery-observe/jquery-observe.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
+    </head>
+    <body style="width: 100vw; height: 100vh">
+        <!--[if lt IE 10]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div id="data-container-1" class="data-container">
+            <div class="input-container">
+                <div class="input">
+                    <p> Line Data </p>
+                    <textarea id="line-data-1" name="line-data" col="100" row="10">
+                        line data
+                    </textarea>
+                </div>
+                <div class="input">
+                    <p> Bar Data </p>
+                    <textarea id="bar-data-1" name="bar-data" col="100" row="10"> bar data </textarea>
+                </div>
+            </div>
+            <button id="executer-1"> Save </button>
+            <div id="svg-container-1" class="svg-container"
+                 style="width:800px;height:300px; display:inline-block;"
+                 data-line=""
+                 data-bar="">
+            </div>
+        </div>
+        <div id="data-container-2" class="data-container">
+            <div class="input-container">
+                <div class="input">
+                    <p> Line Data </p>
+                    <textarea id="line-data-2" name="line-data" col="100" row="10"> line data </textarea>
+                </div>
+                <div class="input">
+                    <p> Bar Data </p>
+                    <textarea id="bar-data-2" name="bar-data" col="100" row="10"> bar data </textarea>
+                </div>
+            </div>
+            <button type="button" id="executer-2"> Save </button>
+            <div id="svg-container-2" class="svg-container"
+                 style="width:300px;height:300px; display:inline-block;"
+                 data-line=""
+                 data-bar=""> </div>
+        </div>
+        <div id="data-container-3" class="data-container">
+            <div class="input-container">
+                <div class="input">
+                    <p> Line Data </p>
+                    <textarea id="line-data-3" name="line-data" col="100" row="10"> line data </textarea>
+                </div>
+                <div class="input">
+                    <p> Bar Data </p>
+                    <textarea id="bar-data-3" name="bar-data" col="100" row="10"> bar data </textarea>
+                </div>
+            </div>
+            <button id="executer-3"> Save </button>
+            <div id="svg-container-3" class="svg-container"
+                 style="width:500px;height:500px; display:inline-block;"
+                 data-line=""
+                 data-bar=""> </div>
+        </div>
+        <!-- build:js scripts/vendor.js -->
+        <!-- bower:js -->
+        <script src="/bower_components/jquery/dist/jquery.js"></script>
+        <script src="/bower_components/d3/d3.js"></script>
+        <script src="/bower_components/jquery-observe/jquery-observe.js"></script>
+        <!-- endbower -->
+        <!-- endbuild -->
 
-    <!-- build:js scripts/main.js -->
-    <script src="scripts/graph.js"></script>
-    <script src="scripts/main.js"></script>
-    <!-- endbuild -->
-  </body>
+        <!-- build:js scripts/main.js -->
+        <script src="scripts/graph.js"></script>
+        <script src="scripts/main.js"></script>
+        <!-- endbuild -->
+    </body>
 </html>

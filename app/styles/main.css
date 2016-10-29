@@ -1,39 +1,38 @@
 .data-container {
-    margin: 20px;
-    padding: 20px;
-}
-.data-container textarea {
-    width: 100%;
-    height: 100px;
-}
-.data-container button {
-    margin: 20px;
-}
-.svg-container {
-    border: 1px solid grey;
-}
-.svg-container2 {
-    border: 1px solid blue;
-}
-.svg-container3 {
-    border: 1px solid green;
-}
+  margin: 20px;
+  padding: 20px; }
+  .data-container .input-container {
+    float: none;
+    height: 180px; }
+    .data-container .input-container .input {
+      width: 500px;
+      float: left; }
+      .data-container .input-container .input textarea {
+        width: 600px;
+        height: 120px;
+        border: 3px solid #cccccc;
+        padding: 5px;
+        font-family: Tahoma, sans-serif;
+        background-image: url(bg.gif);
+        background-position: bottom right;
+        background-repeat: no-repeat; }
+  .data-container button {
+    clear: both;
+    margin: 20px; }
+  .data-container .svg-container {
+    border: 1px solid grey; }
 
 .bar--positive {
-    fill: steelblue;
-}
+  fill: steelblue; }
 
 .bar--negative {
-    fill: darkorange;
-}
+  fill: darkorange; }
 
 .axis text {
-    font: 10px sans-serif;
-}
+  font: 10px sans-serif; }
 
 .line {
-    fill: none;
-    /*stroke: steelblue;*/
-    stroke: #282828;
-    stroke-width: 1.5px;
-}
+  fill: none;
+  /*stroke: steelblue;*/
+  stroke: #282828;
+  stroke-width: 1.5px; }

@@ -1,5 +1,7 @@
 // generated on 2016-08-26 using generator-webapp 2.1.0
+//
 const gulp = require('gulp');
+const sass = require('gulp-sass');
 const gulpLoadPlugins = require('gulp-load-plugins');
 const browserSync = require('browser-sync');
 const del = require('del');
@@ -8,7 +10,17 @@ const wiredep = require('wiredep').stream;
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
 
-gulp.task('styles', () => {
+gulp.task('sass', function () {
+  return gulp.src('app/styles/**/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('app/styles'));
+});
+
+gulp.task('sass:watch', function () {
+  gulp.watch('app/styles/**/*.scss', ['sass']);
+});
+
+gulp.task('styles', ['sass'], () => {
   return gulp.src('app/styles/*.css')
     .pipe($.sourcemaps.init())
     .pipe($.autoprefixer({browsers: ['> 1%', 'last 2 versions', 'Firefox ESR']}))
@@ -108,6 +120,7 @@ gulp.task('serve', ['styles', 'scripts', 'fonts'], () => {
     '.tmp/fonts/**/*'
   ]).on('change', reload);
 
+  gulp.watch('app/styles/**/*.sass', ['sass']);
   gulp.watch('app/styles/**/*.css', ['styles']);
   gulp.watch('app/scripts/**/*.js', ['scripts']);
   gulp.watch('app/fonts/**/*', ['fonts']);

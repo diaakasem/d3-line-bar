@@ -1,0 +1,48 @@
+.data-container {
+    margin: 20px;
+    padding: 20px;
+    .input-container {
+        float: none;
+        height: 180px;
+        .input {
+            width: 500px;
+            float: left;
+            textarea {
+                width: 600px;
+                height: 120px;
+                border: 3px solid #cccccc;
+                padding: 5px;
+                font-family: Tahoma, sans-serif;
+                background-image: url(bg.gif);
+                background-position: bottom right;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+    button {
+        clear: both;
+        margin: 20px;
+    }
+    .svg-container{
+        border: 1px solid grey;
+    }
+}
+
+.bar--positive {
+    fill: steelblue;
+}
+
+.bar--negative {
+    fill: darkorange;
+}
+
+.axis text {
+    font: 10px sans-serif;
+}
+
+.line {
+    fill: none;
+    /*stroke: steelblue;*/
+    stroke: #282828;
+    stroke-width: 1.5px;
+}
