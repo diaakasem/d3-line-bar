@@ -4,7 +4,7 @@
     "node": ">=4"
   },
   "scripts": {
-    "start": "npm install && node_modules/bower/bin/bower install && gulp serve"
+    "start": "npm install && node_modules/bower/bin/bower install &&  gulp serve"
   },
   "devDependencies": {
     "babel-core": "^6.4.0",
